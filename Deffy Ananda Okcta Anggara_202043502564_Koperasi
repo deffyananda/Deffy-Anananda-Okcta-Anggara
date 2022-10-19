@@ -1,0 +1,47 @@
+class koperasi {
+ 
+    String id;
+    String nama;
+    String nomor;
+ 
+    int nomsaldo, ambil;
+ 
+    //method non void
+ 
+    koperasi (String id, String nama, String nomor){
+        this.id = id;
+        this.nama = nama;
+        this.nomor = nomor;
+    }
+ 
+    koperasi(int saldo, int ambil){
+        this.nomsaldo = saldo;
+        this.ambil = ambil;
+    }
+ 
+    double hitungSaldo (){
+        return this.nomsaldo = nomsaldo - ambil;
+    }
+ 
+    //Method Void
+ 
+    void tampil (){
+        System.out.println (this.id+" | " +this.nama+" | "+this.nomor);
+        System.out.println ();
+    }
+ 
+    void ambilSaldo (){
+        System.out.println ("Saldo Anggota Saat Ini       : "+ nomsaldo);
+        System.out.println ("Anda Mengambil Saldo Sebesar : "+this.ambil);
+        System.out.println ("Sisa Saldo Anda Saat Ini     : " + this.hitungSaldo());
+    }
+}
+ 
+public class output {
+    public static void main ( String [] args){
+        koperasi anggota = new koperasi ("ID_0001","Deffy Ananda Okcta Anggara","No.0001");
+        koperasi ambil = new koperasi (500000,150000);
+        anggota.tampil();
+        ambil.ambilSaldo();
+    }
+}
